@@ -45,6 +45,17 @@ function dropGamePiece(y){
         if(gameBoard[x][y] == 0){
             gameBoard[x][y] = currentPlayer; 
             reDrawBoard();
+            // check which player is currently playing and change it to the other player
+            // if its player 1 then change to 2
+            if (currentPlayer == 1){
+                currentPlayer = 2;
+            }
+            // if its not player 1 then its player 2, so change to player 1.
+            else{
+                currentPlayer = 1;
+            }
         }
+        // return something to stop checking for empty spots once player drops piece
+        return 0;
     }
 }
