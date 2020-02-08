@@ -1,3 +1,6 @@
+body{
+    background-color: rgb(221, 204, 204);
+} 
 .game{
     border:solid black 2px;
     width: fit-content;
