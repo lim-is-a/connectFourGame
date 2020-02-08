@@ -17,6 +17,9 @@ function startGame(){
             gameBoard[x][y] = 0;
         }
     }
+    // call function to redraw board and set current player as player 1
+    reDrawBoard();
+    currentPlayer = 1;
 }
 // display updated board after a piece is dropped 
 function reDrawBoard(){
