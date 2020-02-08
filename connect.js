@@ -10,7 +10,10 @@ function startGame(){
     else{
         gameStarted === true;
     }
-    for(let i=0, i <= 5; i++){
-        gameBoard[i] = [];
+    for(let x=0; x <= 5; x++){
+        gameBoard[x] = [];
+        for (let y=0; y<=6; y++){
+            gameBoard[x][y] = 0;
+        }
     }
 }
