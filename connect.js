@@ -47,6 +47,7 @@ function dropGamePiece(y){
         if(gameBoard[x][y] == 0){
             gameBoard[x][y] = currentPlayer; 
             reDrawBoard();
+            checkHorizontal4();
             // check which player is currently playing and change it to the other player
             // if its player 1 then change to 2
             if (currentPlayer == 1){
@@ -60,6 +61,36 @@ function dropGamePiece(y){
             }
             // return something to stop checking for empty spots once player drops piece
             return 0;
+        }
+    }
+}
+// make a function to check if any player has won by 4 game pieces in a row horizontal
+let player1Qty=0;
+let player2Qty=0;
+
+function checkHorizontal4(){
+    for (let x = 5; x >= 0; x--){
+        for (let y = 0; y <= 6; y++){
+            if (player1Qty === 4){
+                alert('player 1 wins!')
+                return 0;
+            }else if(player2Qty === 4){
+                alert('player 2 wins!')
+                return 0;
+            }
+            if(gameBoard[x][y] === 1){
+                player2Qty = 0;
+                player1Qty ++;
+                console.log('player2 qty: ' +player2Qty )
+                console.log('player1 qty: ' +player1Qty )
+            } 
+            else if (gameBoard[x][y] === 2){
+                player1Qty = 0;
+                player2Qty ++;
+                console.log('player2 qty: ' +player2Qty )
+                console.log('player1 qty: ' +player1Qty )
+            }
+            
         }
     }
 }
