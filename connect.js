@@ -39,8 +39,10 @@ function reDrawBoard(){
 }
 // function for current player dropping game piece in empty game hole
 function dropGamePiece(y){
+
+    console.log('dropped piece in column: ' + y)
     // loop through each row starting at the last row
-    for(let x=5; x >= 0, x--){
+    for(let x=5; x >= 0; x--){
         // if no game piece is there, then place current player game piece
         if(gameBoard[x][y] == 0){
             gameBoard[x][y] = currentPlayer; 
@@ -49,13 +51,15 @@ function dropGamePiece(y){
             // if its player 1 then change to 2
             if (currentPlayer == 1){
                 currentPlayer = 2;
+                console.log("player 2's turn");
             }
             // if its not player 1 then its player 2, so change to player 1.
             else{
                 currentPlayer = 1;
+                console.log("player 1's turn");
             }
+            // return something to stop checking for empty spots once player drops piece
+            return 0;
         }
-        // return something to stop checking for empty spots once player drops piece
-        return 0;
     }
 }
