@@ -2,6 +2,9 @@ console.log('hello, you are connected');
 let gameStarted = false;
 let currentPlayer = 0;
 let gameBoard = [];
+// get start button to start game
+let begin = document.getElementsByClassName('start')[0];
+begin.addEventListener('click', startGame());
 
 // function to check if game has started 
 function startGame(){
