@@ -70,6 +70,8 @@ let player2Qty=0;
 
 function checkHorizontal4(){
     for (let x = 5; x >= 0; x--){
+        player1Qty = 0;
+        player2Qty = 0;
         for (let y = 0; y <= 6; y++){
             if (player1Qty === 4){
                 alert('player 1 wins!')
@@ -90,7 +92,6 @@ function checkHorizontal4(){
                 console.log('player2 qty: ' +player2Qty )
                 console.log('player1 qty: ' +player1Qty )
             }
-            
         }
     }
 }
