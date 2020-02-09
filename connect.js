@@ -2,6 +2,11 @@ console.log('hello, you are connected');
 let gameStarted = false;
 let currentPlayer = 0;
 let gameBoard = [];
+// let p1TotalScoreDiv = document.getElementById('p1ScoreTotal').innerHTML;
+// let p2TotalScoreDiv = document.getElementById('p2ScoreTotal').innerHTML;
+let player1TotalScore = 0;
+let player2TotalScore = 0;
+
 // get start button to start game
 let begin = document.getElementsByClassName('start')[0];
 begin.addEventListener('click', startGame());
@@ -79,9 +84,13 @@ function checkHorizontal4(){
         player2Qty = 0;
         for (let y = 0; y <= 6; y++){
             if (player1Qty === 4){
+                player1TotalScore ++;
+                updateTotalScores()
                 alert('player 1 wins!')
                 return 0;
             }else if(player2Qty === 4){
+                player2TotalScore ++;
+                updateTotalScores()
                 alert('player 2 wins!')
                 return 0;
             }
@@ -107,9 +116,13 @@ function checkVertical4(){
         player2Qty = 0;
         for (let x = 5; x >= 0; x--){
             if (player1Qty === 4){
+                player1TotalScore ++;
+                updateTotalScores()
                 alert('player 1 wins!')
                 return 0;
             }else if(player2Qty === 4){
+                player2TotalScore ++;
+                updateTotalScores()
                 alert('player 2 wins!')
                 return 0;
             }
@@ -127,4 +140,10 @@ function checkVertical4(){
             }
         }
     }
+}
+// add score totals
+
+function updateTotalScores(){
+    document.getElementById('p1ScoreTotal').innerHTML = "Player 1: " + player1TotalScore
+    document.getElementById('p2ScoreTotal').innerHTML = "Player 2: " + player2TotalScore
 }
