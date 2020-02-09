@@ -2,6 +2,7 @@ console.log('hello, you are connected');
 let gameStarted = false;
 let currentPlayer = 0;
 let gameBoard = [];
+
 // function to check if game has started 
 function startGame(){
     if (gameStarted == true){
@@ -48,6 +49,7 @@ function dropGamePiece(y){
             gameBoard[x][y] = currentPlayer; 
             reDrawBoard();
             checkHorizontal4();
+            checkVertical4();
             // check which player is currently playing and change it to the other player
             // if its player 1 then change to 2
             if (currentPlayer == 1){
@@ -73,6 +75,34 @@ function checkHorizontal4(){
         player1Qty = 0;
         player2Qty = 0;
         for (let y = 0; y <= 6; y++){
+            if (player1Qty === 4){
+                alert('player 1 wins!')
+                return 0;
+            }else if(player2Qty === 4){
+                alert('player 2 wins!')
+                return 0;
+            }
+            if(gameBoard[x][y] === 1){
+                player2Qty = 0;
+                player1Qty ++;
+                // console.log('player2 qty: ' +player2Qty )
+                // console.log('player1 qty: ' +player1Qty )
+            } 
+            else if (gameBoard[x][y] === 2){
+                player1Qty = 0;
+                player2Qty ++;
+                // console.log('player2 qty: ' +player2Qty )
+                // console.log('player1 qty: ' +player1Qty )
+            }
+        }
+    }
+}
+// check for win vertical
+function checkVertical4(){
+    for (let y = 0; y <= 6; y++){
+        player1Qty = 0;
+        player2Qty = 0;
+        for (let x = 5; x >= 0; x--){
             if (player1Qty === 4){
                 alert('player 1 wins!')
                 return 0;
