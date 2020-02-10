@@ -1,15 +1,21 @@
 body{
-    background-color: rgb(144, 174, 219);
+    background-color: rgb(133, 146, 165);
 }
 h1{
-    border: solid black 2px;
-text-align: center;  
-padding: 100px;  
-margin: 100px 10%;
+    border: solid rgb(46, 2, 66) 10px;
+    text-align: center;  
+    padding: 100px;  
+    margin: 100px 10%;
+    color: rgb(112, 4, 85);
+    font-weight: bold;
+    font-size: 50px;;
+    background-color: rgb(215, 243, 178);
 }
 h3{
-    border: solid black 2px;
-text-align: center; 
-padding: 20px;   
-margin:10px 35%; 
+    border: solid rgb(211, 241, 171) 2px;
+    text-align: center; 
+    padding: 20px;   
+    margin:10px 35%; 
+    background-color:  rgb(62, 19, 87);
+    color: rgb(211, 241, 171);
 }
