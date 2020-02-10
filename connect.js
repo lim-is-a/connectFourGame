@@ -63,7 +63,7 @@ function dropGamePiece(y){
                 checkHorizontal4();
                 checkVertical4();
                 checkDownDiagonal();
-            
+                checkUpDiagonal();
                 // check which player is currently playing and change it to the other player
                 // if its player 1 then change to 2
                 if (currentPlayer == 1){
@@ -186,7 +186,28 @@ function checkDownDiagonal(){
 
 // check for up-facing diagonal
 function checkUpDiagonal(){
-
+    for(let x = 0; x <= 3; x++){
+        for(let y = 3; y <= 5; y++){
+            if (gameBoard[x][y] === 1){
+                if((gameBoard[x+1][y-1] === 1) && (gameBoard[x+2][y-2] === 1) && (gameBoard[x+3][y-3] === 1)){
+                    player1TotalScore ++;
+                    updateTotalScores()
+                    alert('player 1 wins!')
+                    gameStarted = false
+                    return 0;
+                }
+            }
+            if (gameBoard[x][y] === 2){
+                if((gameBoard[x+1][y-1] === 2) && (gameBoard[x+2][y-2] === 2) && (gameBoard[x+3][y-3] === 2)){
+                    player2TotalScore ++;
+                    updateTotalScores()
+                    alert('player 2 wins!')
+                    gameStarted = false
+                    return 0;
+                }
+            }
+        }
+    }
 }
 
 // add score totals
