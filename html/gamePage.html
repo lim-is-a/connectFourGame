@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="../stlyes/gamePage.css">
+    <link rel="stylesheet" href="../styles/gamePage.css">
 </head>
 <body>
     <button class="start">Start Game</button>
@@ -14,13 +14,13 @@
             <thead>
                 <th>
                     <tr>
-                        <td><button onclick = dropGamePiece(0)>Drop here</button> </td>
-                        <td><button onclick = dropGamePiece(1)>Drop here</button> </td>
-                        <td><button onclick = dropGamePiece(2)>Drop here</button> </td>
-                        <td><button onclick = dropGamePiece(3)>Drop here</button> </td>
-                        <td><button onclick = dropGamePiece(4)>Drop here</button> </td>
-                        <td><button onclick = dropGamePiece(5)>Drop here</button> </td>
-                        <td><button onclick = dropGamePiece(6)>Drop here</button> </td>
+                        <td><button class="dropButton" onclick = dropGamePiece(0)>Drop here</button> </td>
+                        <td><button class="dropButton" onclick = dropGamePiece(1)>Drop here</button> </td>
+                        <td><button class="dropButton" onclick = dropGamePiece(2)>Drop here</button> </td>
+                        <td><button class="dropButton" onclick = dropGamePiece(3)>Drop here</button> </td>
+                        <td><button class="dropButton" onclick = dropGamePiece(4)>Drop here</button> </td>
+                        <td><button class="dropButton" onclick = dropGamePiece(5)>Drop here</button> </td>
+                        <td><button class="dropButton" onclick = dropGamePiece(6)>Drop here</button> </td>
                     </tr>
                 </th>
             </thead>
@@ -74,7 +74,7 @@
                     <td id = "hole-5-0" class="hole"></td>
                     <td id = "hole-5-1" class="hole"></td>
                     <td id = "hole-5-2" class="hole"></td>
-                    <tdq id = "hole-5-3" class="hole"></tdq>
+                    <td id = "hole-5-3" class="hole"></td>
                     <td id = "hole-5-4" class="hole"></td>
                     <td id = "hole-5-5" class="hole"></td>
                     <td id = "hole-5-6" class="hole"></td>
@@ -82,14 +82,15 @@
             </tbody>
         </table>
     </section>
-    <section>
-        <div class="score">SCORE:
+    <section class = "data">
+        <div class="score">
+            <p>Score Total</p>      
             <div id = "p1ScoreTotal" class="player1">Player 1: </div>
             <div id = "p2ScoreTotal" class="player2">Player 2: </div>
         </div>
         <button class="reset" onclick="window.location.reload();">Reset Score</button>
     </section>
 
-    <script src="../js/gamePage.js"></script>
+    <script src="../javascript/gamePage.js"></script>
 </body>
 </html>
