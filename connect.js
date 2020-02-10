@@ -32,6 +32,7 @@ function startGame(){
     reDrawBoard();
     currentPlayer = 1;
 }
+
 // function to display updated board after a piece is dropped 
 function reDrawBoard(){
     // loop through the entire gameBoard 
@@ -48,6 +49,7 @@ function reDrawBoard(){
         }
     }
 }
+
 // function for current player dropping game piece in empty game hole
 function dropGamePiece(y){
     if(gameStarted){
@@ -60,6 +62,8 @@ function dropGamePiece(y){
                 reDrawBoard();
                 checkHorizontal4();
                 checkVertical4();
+                checkDownDiagonal();
+            
                 // check which player is currently playing and change it to the other player
                 // if its player 1 then change to 2
                 if (currentPlayer == 1){
@@ -118,6 +122,7 @@ function checkHorizontal4(){
         }
     }
 }
+
 // check for win vertical
 function checkVertical4(){
     for (let y = 0; y <= 6; y++){
@@ -152,12 +157,44 @@ function checkVertical4(){
         }
     }
 }
-// add score totals
 
+// check for down-facing diagonal
+function checkDownDiagonal(){
+    for(let x = 0; x <= 3; x++){
+        for(let y = 0; y <= 2; y++){
+            if (gameBoard[x][y] === 1){
+                if((gameBoard[x+1][y+1] === 1) && (gameBoard[x+2][y+2] === 1) && (gameBoard[x+3][y+3] === 1)){
+                    player1TotalScore ++;
+                    updateTotalScores()
+                    alert('player 1 wins!')
+                    gameStarted = false
+                    return 0;
+                }
+            }
+            if (gameBoard[x][y] === 2){
+                if((gameBoard[x+1][y+1] === 2) && (gameBoard[x+2][y+2] === 2) && (gameBoard[x+3][y+3] === 2)){
+                    player2TotalScore ++;
+                    updateTotalScores()
+                    alert('player 2 wins!')
+                    gameStarted = false
+                    return 0;
+                }
+            }
+        }
+    }
+}
+
+// check for up-facing diagonal
+function checkUpDiagonal(){
+
+}
+
+// add score totals
 function updateTotalScores(){
     document.getElementById('p1ScoreTotal').innerHTML = "Player 1: " + player1TotalScore
     document.getElementById('p2ScoreTotal').innerHTML = "Player 2: " + player2TotalScore
 }
+
 // clear out board
 function resetBoard(){
     // loop through the entire gameBoard 
@@ -169,4 +206,12 @@ function resetBoard(){
                 document.getElementById("hole-" + x + "-" + y).classList.remove("player2");
         }
     }
+}
+
+// resets the score and redraws the board to start fresh
+function resetScore(){
+    player1TotalScore = 0;
+    player2TotalScore = 0;
+    updateTotalScores();
+    resetBoard();
 }
