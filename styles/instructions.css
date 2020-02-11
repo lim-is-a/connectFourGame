@@ -10,16 +10,16 @@ body{
     padding: 10px;
 }
 .text {
-    margin: 50px 5% auto 15%;
+    margin: 50px 3% auto 16%;
     text-align: center;
-    width: 450px;
+    width: 460px;
     height: 400px;
     float: left;
 }
 #sizeImg{
+    margin-top: 100px;
     height: 400px;
     width: 400px;
-    float: left;
 }
 .image {
     margin-top: 100px;
