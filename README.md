@@ -10,10 +10,14 @@ Each player will take turns dropping their game piece into a column of the game 
 an empty spot on the board and stack on top of previously dropped pieces. The player who is first to
 connect 4 of their pieces, wins!
 
-### links & images
+### Wireframe images
 
-- Images of connect 4 wireframe 
+- Home Page:
 ![homepagewireframe](images/connect4HomePageWireframe.png)
+- Game Page:
 ![gamepagewireframe](images/gameboardWireframeImage.png)
+- Instruction Page:
 ![instructionswireframe](images/gameInstructionsWireframe.png)
+
+### Link to Trello Project Board
 - https://trello.com/b/Tcm2kogp/project-1-game
