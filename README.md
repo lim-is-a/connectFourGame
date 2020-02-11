@@ -27,3 +27,9 @@ Each player, starting with player 1, will take turns dropping their game piece i
 
 ### Link to Trello Project Board
 - https://trello.com/b/Tcm2kogp/project-1-game
+
+### Link to deployed project
+1. On netlify
+- https://clever-blackwell-ca507f.netlify.com/
+2. On AWS
+- https://master.d35is8w5c4alkl.amplifyapp.com/
