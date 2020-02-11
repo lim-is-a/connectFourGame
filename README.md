@@ -15,5 +15,5 @@ connect 4 of their pieces, wins!
 - Images of connect 4 wireframe 
 ![homepagewireframe](images/connect4HomePageWireframe.png)
 ![gamepagewireframe](images/gameboardWireframeImage.png)
-![instructionswireframe](images/instructionsWireframeImage.png)
+![instructionswireframe](images/gameInstructionsWireframe.png)
 - https://trello.com/b/Tcm2kogp/project-1-game
