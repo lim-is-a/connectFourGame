@@ -191,8 +191,8 @@ function checkDownDiagonal() {
 
 // check for up-facing diagonal
 function checkUpDiagonal() {
-    for (let x = 0; x <= 3; x++) {
-        for (let y = 3; y <= 5; y++) {
+    for (let x = 0; x <= 2; x++) {
+        for (let y = 3; y <= 6; y++) {
             if (gameBoard[x][y] === 1) {
                 if ((gameBoard[x + 1][y - 1] === 1) && (gameBoard[x + 2][y - 2] === 1) && (gameBoard[x + 3][y - 3] === 1)) {
                     player1TotalScore++;
