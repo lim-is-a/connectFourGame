@@ -98,7 +98,7 @@ function checkHorizontal4() {
     for (let x = 5; x >= 0; x--) {
         player1Qty = 0;
         player2Qty = 0;
-        for (let y = 0; y <= 6; y++) {
+        for (let y = 0; y <= 7; y++) {
             if (player1Qty === 4) {
                 player1TotalScore++;
                 updateTotalScores()
@@ -112,7 +112,13 @@ function checkHorizontal4() {
                 gameStarted = false
                 return 0;
             }
-            if (gameBoard[x][y] === 1) {
+            if (gameBoard[x][y] === 0) {
+                player2Qty = 0;
+                player1Qty = 0;
+                // console.log('player2 qty: ' +player2Qty )
+                // console.log('player1 qty: ' +player1Qty )
+            }
+            else if (gameBoard[x][y] === 1) {
                 player2Qty = 0;
                 player1Qty++;
                 // console.log('player2 qty: ' +player2Qty )
